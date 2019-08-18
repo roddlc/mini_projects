@@ -67,7 +67,8 @@ for start, end in zip(list_of_start_dates, list_of_end_dates):
     tmp_df["trip_start_hour_of_day"] = tmp_df["trip_start_timestamp"].dt.strftime("%H")
 
     # write to csv
-    tmp_df.to_csv(f"data/rideshare_nov{start[:2]}_to_nov{end[:2]}.csv", index = False)
+    # storing output dfs in separate folder b/c I think they might be too large to push to github
+    tmp_df.to_csv(f"../../chicago_rideshare_data/rideshare_nov{start[:2]}_to_nov{end[:2]}.csv", index = False)
 
     # print to track progress
     print(f"File beginning on Nov {start[:2]} has finished")
